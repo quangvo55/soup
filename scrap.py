@@ -12,16 +12,16 @@ def getData(url,team):
 		f.write('\n')
 		strrow = team;
 		for i in range(len(children)):
-			if (i == 2 or i ==4): #skip duplicate values
+			if (i == 2 or i == 4): #skip duplicate values
 				continue
 			child = children[i]
 			value = str(child.text).replace('\n', ',').replace('\r', '')
-			value = " ".join(value.split())
+			value = " ".join(value.split()) ## remove multiple duplicate whitespaces
 			strrow += value
 		#clean and transform data to desire format for csv file
 		strrow = re.sub(r',\s|\s,', ',', strrow).replace(',,', ',') #remove whitespaces
 		strrow = re.sub(r'^,', '', strrow) 
-		strrow = re.sub(r'(L|W)\s', r'\1,', strrow) #seprate game outcomes into two columns
+		strrow = re.sub(r'(L|W)\s', r'\1,', strrow) #seprate game outcomes from score
 		strrow = re.sub(r'(O|U)\s', r'\1,', strrow) #seperate OU outcomes into two columns
 		f.write(strrow)
 	return

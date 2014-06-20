@@ -21,8 +21,8 @@ def getData(url,team):
 		#clean and transform data to desire format for csv file
 		strrow = re.sub(r',\s|\s,', ',', strrow).replace(',,', ',') #remove whitespaces
 		strrow = re.sub(r'^,', '', strrow) 
-		strrow = re.sub(r'(L|W)\s', r'\1,', strrow) #seprate game outcomes from score
-		strrow = re.sub(r'(O|U)\s', r'\1,', strrow) #seperate OU outcomes into two columns
+		strrow = re.sub(r'(L|W)\s', r'\1,', strrow) #separate game outcomes from score
+		strrow = re.sub(r'(O|U)\s', r'\1,', strrow) #separate OU outcomes into two columns
 		f.write(strrow)
 	return
 

@@ -10,7 +10,7 @@ def getData(url,team):
 	for trow in soup.find_all('tr', {'class':'datarow'}):
 		children = trow.findChildren()
 		f.write('\n')
-		strrow = team;
+		strrow = team
 		for i in range(len(children)):
 			if (i == 2 or i == 4): #skip duplicate values
 				continue

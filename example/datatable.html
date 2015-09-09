@@ -19,7 +19,9 @@
                 { "data": 'Opp', title : "Opponent" },
                 { "data": 'Score', title : "Score" },
                 { "data": 'Outcome', title : "Game Outcome" },                
-                { "data": 'Week', title : "Week" },
+                { "data": 'Week', title : "Week", "render" : function(data, type, full, meta) {
+            		return "week " + data;
+                } },
                 { "data": 'Spread', title : "Spread" },
                 { "data": 'SpreadOutcome', title : "Spread Outcome" },
                 { "data": 'OUNumber', title : "Over/Under" },

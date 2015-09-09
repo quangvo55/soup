@@ -14,12 +14,16 @@
                 "dataSrc": ""
             },
 		    "columns": [
-		        { "data": 'position', title : "Position" },                
+		        { "data": 'position', title : "Position", "render" : function(data, type, full, meta) {
+            		return (data == "K") ? "Kicker" : data;
+                } },                
                 { "data": 'player', title : "Player" },
                 { "data": 'projection', title : "Projection" },
                 { "data": 'salary', title : "Salary" },
-                { "data": 'week', title : "Week" },
-                { "render" : function ( data, type, full, meta ) {
+                { "data": 'week', title : "Week", "render" : function(data, type, full, meta) {
+            		return "week " + data;
+                } },
+                { "render" : function (data, type, full, meta) {
 				      return (full.projection/full.salary)*1000;
 				    },
 				    title : "Point/$1000"
